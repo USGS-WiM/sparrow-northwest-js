@@ -1,7 +1,7 @@
 ![WiM](wimlogo.png)
 
 
-# SPARROW Eastern United States Nutrient Loading
+# SPARROW Pacfic Western United States Nutrient Loading
 
 SPARROW is a modeling tool for the regional interpretation of water-quality monitoring data. The model relates in-stream water-quality measurements to spatially referenced characteristics of watersheds, including contaminant sources and factors influencing terrestrial and aquatic transport. SPARROW empirically estimates the origin and fate of contaminants in river networks and quantifies uncertainties in model predictions. This application provides a flexible viewer to visualise SPARROW watershed models.  For more information about Sparrow visit: [http://onlinelibrary.wiley.com/doi/10.1111/j.1752-1688.2011.00574.x/pdf](http://onlinelibrary.wiley.com/doi/10.1111/j.1752-1688.2011.00574.x/pdf)
 
@@ -25,13 +25,13 @@ These instructions will get you a copy of the project up and running on your loc
 To begin clone the repository from Github to your development machine.
 
 ```
-git clone https://github.com/USGS-WiM/sparrow-eastern-us-js.git
+git clone https://github.com/USGS-WiM/sparrow-wastern-js.git
 ```
 
 Change to the new newly created directory
 
 ```
-cd sparrow-eastern-us-js
+cd sparrow-western-us-js
 ```
 
 Install dependencies using NPM
