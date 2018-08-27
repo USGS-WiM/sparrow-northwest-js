@@ -1593,9 +1593,9 @@ require([
         switch (selectedIndex) {
             case 0:
                 if ($("#st-select")[0].selectedIndex > 0) {
-                    return "ST_COMID";
+                    return "ST_MRB_ID";
                 } else {
-                    return "COMID";
+                    return "MRB_ID";
                 }
             case 1:
                 if ($("#st-select")[0].selectedIndex > 0) {
@@ -1635,8 +1635,8 @@ require([
             /***this function removes any fields ending with "AREA" or "SQKM" from the response.features Object. (i.e. AREASQKM, DIVDASQKM DEMIAREA, DEMTAREA, GP1_AREA, etc.)
              The chart was not built to accommodate the extra area fields, but they're necessary for display in the table.***/
             $.map(Object.keys(feature.attributes), function(val, i) {
-                //find ANY INDEX that contains "AREA" in the key
-                if (val.indexOf("AREA") > -1 || val.indexOf("SQKM") > -1) {
+                //UPDATE IMPORTANT! Check area field names --find ANY INDEX that contains "AREA" in the key
+                if (val.indexOf("AREA") > -1 || val.indexOf("SQKM") > -1 || val.indexOf("AR") > -1 ) {
                     delete feature.attributes[val];
                 }
             });
@@ -1644,21 +1644,14 @@ require([
             //push the feature attributes AFTER removing all the "AREA" atributes.
             featureSort.push(feature.attributes);
         });
-        /* var singleChart = false;
-        var checkArr = ["ACCY", "INCY"];
-        $.each(checkArr, function(index, val){
-            if( featureSort[0].hasOwnProperty(val) ){
-                singleChart = true;
-            }
-        });*/
-
+        
         var sum = 0;
         $.each(featureSort, function(index, obj) {
             $.each(obj, function(i, attribute) {
                 //don't try to sum up an strings or ID numbers
                 //UPDATE important! -- if catchments ID field is returned make sure the correctly named field is in the catch below.
-                if (jQuery.type(attribute) !== "string" && i !== "COMID") {
-                    // (dont need this because ST_COMID is a string) || i !== "ST_COMID") ){
+                if (jQuery.type(attribute) !== "string" && i !== "MRB_ID") {
+                    // (dont need this because ST_MRB_ID is a string) || i !== "ST_MRB_ID") ){
                     sum += attribute;
                 }
             });
@@ -1693,7 +1686,7 @@ require([
                     //catchments only
                     data.push({
                         y: feature[value],
-                        id: feature["COMID"] || feature["ST_COMID"]
+                        id: feature["MRB_ID"] || feature["ST_MRB_ID"]
                     }); // TMR ADDED
                 } else {
                     data.push(feature[value]);
@@ -1972,7 +1965,7 @@ require([
                             if (e.resetSelection != true) {
                                 var categoryStr = "";
                                 $.each(categoryArr, function(i, category) {
-                                    // only COMID is a number, ST_COMID is a string
+                                    // only COMID is a number, ST_MRB_ID is a string
                                     categoryStr += '"' + category + '", ';
                                 });
                                 var queryStr = categoryStr.slice(0, categoryStr.length - 2);

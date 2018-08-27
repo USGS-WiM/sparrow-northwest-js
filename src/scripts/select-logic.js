@@ -430,51 +430,51 @@ function getExtraOutfields(outfieldsArr, sparrowLayerId) {
         case 9:
             //CATCHMENTS
             //finalChartArr.push("PNAME");
-            finalChartArr.push("AREASQKM");
-            finalChartArr.push("DIVDASQKM");
-            finalChartArr.push("COMID");
+            finalChartArr.push("DEMTAREA");
+            finalChartArr.push("DEMIAREA ");
+            finalChartArr.push("MRB_ID");
             break;
         case 1:
         case 10:
             //HUC8
-            finalChartArr.push("GP3_AREA");
+            finalChartArr.push("GP3_AR");
             break;
         case 2:
         case 11:
             //Tributarys
-            finalChartArr.push("GP2_AREA");
+            finalChartArr.push("GP2_AR");
             break;
         case 3:
         case 12:
             //Independent Watershed
-            finalChartArr.push("GP1_AREA");
+            finalChartArr.push("GP1_AR");
             break;
         case 4:
         case 13:
             //State
-            finalChartArr.push("ST_AREA");
+            finalChartArr.push("ST_AR");
             break;
         case 5:
         case 14:
             //Catchments w/ state divisions
-            finalChartArr.push("AREASQKM");
-            finalChartArr.push("AREASQKM");
-            finalChartArr.push("ST_COMID");
+            finalChartArr.push("DEMTAREA");
+            finalChartArr.push("DEMIAREA");
+            finalChartArr.push("ST_MRB_ID");
             break;
         case 6:
         case 15:
             //grp3 w/ state divisions
-            finalChartArr.push("SG3_AREA");
+            finalChartArr.push("SG3_AR");
             break;
         case 7:
         case 16:
             //grp 2 w/ state divisions
-            finalChartArr.push("SG2_AREA");
+            finalChartArr.push("SG2_AR");
             break;
         case 8:
         case 17:
             //grp1 w/ state divisions
-            finalChartArr.push("SG1_AREA");
+            finalChartArr.push("SG1_AR");
             break;
     }
     return finalChartArr;
