@@ -115,11 +115,11 @@ function loadEventHandlers() {
     /* CLEAR AOI BUTTON EVENT */
     $("#clearAOIButton").on("click", function() {
         //if resetting to Catchment layer, disable HUC12 Dropdown
-        if ($("#groupResultsSelect")[0].value == "Catchment") {
+        /* if ($("#groupResultsSelect")[0].value == "Catchment") {
             $("#grp3-select").attr("disabled", "disabled");
             $("#grp3-select").addClass("disabled");
             $("#grp3-select").selectpicker("refresh");
-        }
+        } */
         $("#page-loader").show();
         var sparrowId = app.map.getLayer("SparrowRanking").visibleLayers[0];
 
@@ -135,7 +135,8 @@ function loadEventHandlers() {
         }
 
         //reset the selects
-        $(".aoiSelect").selectpicker("val", ""); // 'hack' because selectpicker('deselectAll') method only works when bootstrap-select is open.
+        //$(".aoiSelect").selectpicker("val", ""); // 'hack' because selectpicker('deselectAll') method only works when bootstrap-select is open.
+        $(".aoiSelect").selectpicker('deselectAll'); //deselectAll was fixed in 1.13.x version of bootstrap select
 
         generateRenderer();
 
@@ -194,8 +195,8 @@ function loadEventHandlers() {
         switch ($("#groupResultsSelect")[0].selectedIndex) {
             case 0: //Catchment
                 //DISABLE HUC12 @ full extent because it has too many options
-                $("#grp3-select").attr("disabled", "disabled");
-                $("#grp3-select").addClass("disabled");
+                /* $("#grp3-select").attr("disabled", "disabled");
+                $("#grp3-select").addClass("disabled"); */
                 $("#grp3-select").selectpicker("refresh");
 
                 //AOI HUC8(GP3) AND Main River basin(GP1) enabled
@@ -209,7 +210,7 @@ function loadEventHandlers() {
                     clearAOIandAppendWarning("grp2-warning", "HUC8", "HUC12", "#grp2-select", "AOI2");
                 }
                 //DISABLE HUC12 @ full extent because it has too many options
-                $("#grp3-select").attr("disabled", "disabled");
+                /* $("#grp3-select").attr("disabled", "disabled"); */
                 $("#grp3-select").addClass("disabled");
                 $("#grp3-select").selectpicker("refresh");
 
