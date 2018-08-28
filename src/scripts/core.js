@@ -1002,7 +1002,8 @@ require([
             case 0:
                 //none are chosen, get everything
                 //reset the selects
-                $(".aoiSelect").selectpicker("val", "");
+                //$(".aoiSelect").selectpicker("val", ""); //this hack is no longer necessary when using > v1.13.x of boostrap-select
+                $(".aoiSelect").selectpicker('deselectAll'); //deselectAll was fixed in 1.13.x version of bootstrap select
                 app.clearLayerDefObj();
                 break;
         }
@@ -1121,8 +1122,6 @@ require([
                         if (app.userSelectedDispFieldName == "") {
                             app.userSelectedDispFieldName = respObj.displayFieldName;
                         }
-                        // make sure chart button changes name
-                        $("#chartButton").html("Show Chart for selection");
                     } else {
                         //removing
                         var symbolToRemove = app.map.graphics.graphics.filter(function(g) {
@@ -1131,12 +1130,14 @@ require([
                         app.map.graphics.remove(symbolToRemove);
                         //remove this from array of responses
                         app.userSelectedShapes.splice(app.userSelectedShapes.indexOf(respValue), 1);
-                        // if all selected have been removed, change Show Chart button back to say All
-                        if (app.userSelectedShapes.length == 0 && app.userSelectedShapes.length < chartFeatureMax) {
-                            $("#chartButton").html("Show Chart");
-                        }
+                       
                     }
                 });
+                if (app.userSelectedShapes.length == 0 && app.userSelectedShapes.length < chartFeatureMax) {
+                    $("#chartButton").html("Show Chart");
+                } else{
+                    $("#chartButton").html("Show Chart for selection");
+                }
             } else {
                 var calibrationInfoWindow = false;
                 app.map.graphics.clear();
@@ -1443,16 +1444,16 @@ require([
         //IF options already exist, be sure to REMOVE OLD OPTIONS before calling this function
 
         // get UNIQUE options from AllAOIOptions global Object
-        //var grp3Options = getUniqueArray(AllAOIOptions, 'GP3');
+        var grp3Options = getUniqueArray(AllAOIOptions, 'GP3');
         var grp2Options = getUniqueArray(AllAOIOptions, "GP2");
         var grp1Options = getUniqueArray(AllAOIOptions, "GP1");
         var STOptions = getUniqueArray(AllAOIOptions, "ST");
 
-        /*  $.each(grp3Options, function(index, option){
+        $.each(grp3Options, function(index, option){
             if (option != " "){
                 $('#grp3-select').append(new Option(option));
             }
-        }); */
+        }); 
         $.each(grp2Options, function(index, option) {
             if (option != " ") {
                 $("#grp2-select").append(new Option(option));
@@ -1468,10 +1469,10 @@ require([
         });
 
         //disable HUC12 AOI on app init
-        $("#grp3-select").attr("disabled", "disabled");
-        $("#grp3-select").addClass("disabled");
+        /* $("#grp3-select").attr("disabled", "disabled");
+        $("#grp3-select").addClass("disabled"); */
 
-        //$('#grp3-select').selectpicker('refresh');
+        $('#grp3-select').selectpicker('refresh');
         $("#grp2-select").selectpicker("refresh");
         $("#grp1-select").selectpicker("refresh");
         $("#st-select").selectpicker("refresh");
@@ -1884,6 +1885,7 @@ require([
             $("#chartWindowDiv").css("visibility", "hidden");
             $("#chartWindowContainer").empty();
             $("#chartWindowPanelTitle").empty();
+            $("#chartButton").html("Show Chart"); //reset chart button label if it is set from selection
         });
 
         //need listener to resize chart
@@ -1960,7 +1962,7 @@ require([
                             graphicsQuery.returnGeometry = true; //important!
                             graphicsQuery.outSpatialReference = app.map.spatialReference; //important!
                             graphicsQuery.outFields = [fieldName];
-                            graphicsQuery.maxAllowableOffset = 2000;
+                            graphicsQuery.maxAllowableOffset = 500;
 
                             if (e.resetSelection != true) {
                                 var categoryStr = "";
@@ -2195,7 +2197,7 @@ require([
                                     graphicsQuery.returnGeometry = true; //important!
                                     graphicsQuery.outSpatialReference = app.map.spatialReference; //important!
                                     graphicsQuery.outFields = [fieldName];
-                                    graphicsQuery.maxAllowableOffset = 2000;
+                                    graphicsQuery.maxAllowableOffset = 500;
 
                                     graphicsQuery.where = fieldName + "= '" + category + "'";
 
@@ -2375,7 +2377,7 @@ require([
         graphicsQuery.outSpatialReference = app.map.spatialReference; //important!
         graphicsQuery.outFields = [fieldName];
         graphicsQuery.where = fieldName + "= '" + category + "'";
-        maxAllowableOffset = 2000;
+        graphicsQuery.maxAllowableOffset = 500;
 
 
         queryTask.execute(graphicsQuery, responseHandler);
