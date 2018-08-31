@@ -464,17 +464,17 @@ function getExtraOutfields(outfieldsArr, sparrowLayerId) {
         case 6:
         case 15:
             //grp3 w/ state divisions
-            finalChartArr.push("SG3_AR");
+            finalChartArr.push("ST_AREA");
             break;
         case 7:
         case 16:
             //grp 2 w/ state divisions
-            finalChartArr.push("SG2_AR");
+            finalChartArr.push("ST_AREA");
             break;
         case 8:
         case 17:
             //grp1 w/ state divisions
-            finalChartArr.push("SG1_AR");
+            finalChartArr.push("ST_AREA");
             break;
     }
     return finalChartArr;
