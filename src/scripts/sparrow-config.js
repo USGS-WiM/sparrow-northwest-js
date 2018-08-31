@@ -35,11 +35,11 @@ var groupResultsLabels = {
 }
 
 //download locations TODO change the links for each shapefile
-/* var phosphorusShapefileURL = 'https://sparrow.wim.usgs.gov/east-us/downloads/east_us_shapefiles_phosphorus.zip';
-var nitrogenShapefileURL = 'https://sparrow.wim.usgs.gov/east-us/downloads/east_us_shapefiles_nitrogen.zip';
-var phosCalibrationURL = 'https://sparrow.wim.usgs.gov/east-us/downloads/east_us_phosphorus_calibration_sites.zip';
-var nitroCalibrationURL = 'https://sparrow.wim.usgs.gov/east-us/downloads/east_us_nitrogen_calibration_sites.zip';
- */
+var phosphorusShapefileURL = 'https://sparrow.wim.usgs.gov/pacific-northwest/downloads/pacific_northwest_shapefiles_phosphorus.zip';
+var nitrogenShapefileURL = 'http://sparrow.wim.usgs.gov/pacific-northwest/downloads/pacific_northwest_shapefiles_nitrogen.zip';
+var phosCalibrationURL = 'http://sparrow.wim.usgs.gov/pacific-northwest/downloads/pacific_northwest_phosphorus_calibration_sites.zip';
+var nitroCalibrationURL = 'http://sparrow.wim.usgs.gov/pacific-northwest/downloads/pacific_northwest_nitrogen_calibration_sites.zip';
+ 
 var tableOutFields = [
     { field: "FID", name: "Unique Feature Id"},
     { field: "GRP1", name: "Main River Basin"},
