@@ -19,7 +19,7 @@ var splitLayers = [5,6,7,13,14,15]; //important! UPDATE layer Ids of all state s
 
 var mapCenter = [-118.121866,46.066957];
 //app.defaultMapCenter = [-87, 42];
-defaultZoomLevel = 5;
+defaultZoomLevel = 6;
 
 borderThreshold = 10; //dynamic polygon border threshold.  When zoomed beyond this number borders appear
 var dynamicBorderLayers = ["Catchment", "HUC8", "HUC6"]; //Aggregate layer choices placed in this array will have dynamic borders.  Each string MUST MATCH the text in the Group Results By Select to work.
@@ -138,6 +138,7 @@ var nitrogenSourceDefinitions = {
     1. each color corresponds with the order of SourceDefinitions objects above  
     2. there the number of hex colors matches the number of nutrient sources
 **/
+
 var phosColors = ['#BF0000', '#FFCCFF', '#663100', '#FFEC99', '#A2EB85'];     
 var nitroColors = ['#BF0000', '#FFCCFF', '#663100', '#FFEC99', '#00a900','#A2EB85', '#006800', '#0070C0' ];  
 
@@ -550,57 +551,6 @@ var Catchments_st = [
         ]
     }
 
-]
-
-//HUC8 Metric choices, service Id 1
-var Group3 = [    
-    {
-        field: "GP3_AL", 
-        name: mappedDefinitions.al, 
-        chartOutfields: [
-            { attribute: "GP3", label: aggregateDefinitions.gp3 }, 
-            { attribute: "GP3_AL_S1", label: mappedDefinitions.al + ' ' + phosphorusSourceDefinitions.s1},
-            { attribute: "GP3_AL_S2", label: mappedDefinitions.al + ' ' + phosphorusSourceDefinitions.s2},
-            { attribute: "GP3_AL_S3", label: mappedDefinitions.al + ' ' + phosphorusSourceDefinitions.s3},
-            { attribute: "GP3_AL_S4", label: mappedDefinitions.al + ' ' + phosphorusSourceDefinitions.s4},
-            { attribute: "GP3_AL_S5", label: mappedDefinitions.al + ' ' + phosphorusSourceDefinitions.s5}
-        ]
-    },
-    {
-        field: "GP3_DAL", 
-        name: mappedDefinitions.dal, 
-        chartOutfields: [
-            { attribute: "GP3", label: aggregateDefinitions.gp3 }, 
-            { attribute: "GP3_DAL_S1", label: mappedDefinitions.dal + ' ' + phosphorusSourceDefinitions.s1},
-            { attribute: "GP3_DAL_S2", label: mappedDefinitions.dal + ' ' + phosphorusSourceDefinitions.s2},
-            { attribute: "GP3_DAL_S3", label: mappedDefinitions.dal + ' ' + phosphorusSourceDefinitions.s3},
-            { attribute: "GP3_DAL_S4", label: mappedDefinitions.dal + ' ' + phosphorusSourceDefinitions.s4},
-            { attribute: "GP3_DAL_S5", label: mappedDefinitions.dal + ' ' + phosphorusSourceDefinitions.s5}       ] 
-    },
-    {
-        field: "GP3_AY", 
-        name: mappedDefinitions.ay, 
-        chartOutfields: [
-            { attribute: "GP3", label: aggregateDefinitions.gp3 }, 
-            { attribute: "GP3_AY_S1", label: mappedDefinitions.ay + ' ' + phosphorusSourceDefinitions.s1},
-            { attribute: "GP3_AY_S2", label: mappedDefinitions.ay + ' ' + phosphorusSourceDefinitions.s2},
-            { attribute: "GP3_AY_S3", label: mappedDefinitions.ay + ' ' + phosphorusSourceDefinitions.s3},
-            { attribute: "GP3_AY_S4", label: mappedDefinitions.ay + ' ' + phosphorusSourceDefinitions.s4},
-            { attribute: "GP3_AY_S5", label: mappedDefinitions.ay + ' ' + phosphorusSourceDefinitions.s5}
-        ]
-    },
-    {
-        field: "GP3_DAY", 
-        name: mappedDefinitions.day, 
-        chartOutfields: [
-            { attribute: "GP3", label: aggregateDefinitions.gp3 }, 
-            { attribute: "GP3_DAY_S1", label: mappedDefinitions.day + ' ' + phosphorusSourceDefinitions.s1},
-            { attribute: "GP3_DAY_S2", label: mappedDefinitions.day + ' ' + phosphorusSourceDefinitions.s2},
-            { attribute: "GP3_DAY_S3", label: mappedDefinitions.day + ' ' + phosphorusSourceDefinitions.s3},
-            { attribute: "GP3_DAY_S4", label: mappedDefinitions.day + ' ' + phosphorusSourceDefinitions.s4},
-            { attribute: "GP3_DAY_S5", label: mappedDefinitions.day + ' ' + phosphorusSourceDefinitions.s5}
-        ]
-    }
 ]
 
 var Group3_st = [

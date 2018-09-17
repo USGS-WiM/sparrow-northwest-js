@@ -464,17 +464,17 @@ function getExtraOutfields(outfieldsArr, sparrowLayerId) {
         case 6:
         case 15:
             //grp3 w/ state divisions
-            finalChartArr.push("SG3_AR");
+            finalChartArr.push("ST_AREA");
             break;
         case 7:
         case 16:
             //grp 2 w/ state divisions
-            finalChartArr.push("SG2_AR");
+            finalChartArr.push("ST_AREA");
             break;
         case 8:
         case 17:
             //grp1 w/ state divisions
-            finalChartArr.push("SG1_AR");
+            finalChartArr.push("ST_AREA");
             break;
     }
     return finalChartArr;
@@ -636,8 +636,7 @@ function generateRenderer() {
             //calculate legend values to 3 significant figures
             function sigFigures(n) {
                 if (n > 0) {
-                    var mult = Math.pow(10, 3 - Math.floor(Math.log(n) / Math.LN10) - 1);
-                    return Math.round(n * mult) / mult;
+                    return parseFloat(n.toPrecision(3));
                 } else {
                     return n;
                 }
