@@ -1094,7 +1094,7 @@ require([
 
         app.identifyParams.geometry = evt.mapPoint;
         app.identifyParams.mapExtent = app.map.extent;
-        app.identifyParams.tolerance = 1;
+        app.identifyParams.tolerance = 3;
         app.identifyParams.maxAllowableOffset = 200;
 
         //Deferred callback
@@ -1153,23 +1153,23 @@ require([
                             //UPDATE important! make sure the field names match what is in the REST layer
                             calibrationTemplate.setContent(
                                 "<div><b>Station Name:</b> " +
-                                    responseObj.feature.attributes.NAME +
+                                    responseObj.feature.attributes.station_na +
                                     "</div><br>" +
                                     "<div><b>Station ID:</b> </b>" +
-                                    responseObj.feature.attributes.STATION_ID +
+                                    responseObj.feature.attributes.station_id +
                                     "</div><br>" +
                                     "<div><b>SPARROW Reach ID: </b>" +
-                                    responseObj.feature.attributes.COMID +
+                                    responseObj.feature.attributes.mrb_id +
                                     "</div><br>" +
                                     "<div><b>Fluxmaster Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.FLUXMASTER +
+                                    responseObj.feature.attributes.FMLOAD +
                                     "</div><br>" +
                                     "<div><b>SPARROW Estimated Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.SPARROW_ES +
+                                    responseObj.feature.attributes.SPLOAD +
                                     "</div><br>"
                             );
 
@@ -1190,23 +1190,23 @@ require([
                             //UPDATE important! make sure the field names below match what is in the REST layer
                             calibrationTemplateN.setContent(
                                 "<div><b>Station Name:</b> " +
-                                    responseObj.feature.attributes.name +
+                                    responseObj.feature.attributes.station_na +
                                     "</div><br>" +
                                     "<div><b>Station ID:</b> </b>" +
                                     responseObj.feature.attributes.station_id +
                                     "</div><br>" +
                                     "<div><b>SPARROW Reach ID: </b>" +
-                                    responseObj.feature.attributes.comid +
+                                    responseObj.feature.attributes.mrb_id +
                                     "</div><br>" +
                                     "<div><b>Fluxmaster Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.FLUXMASTER +
+                                    responseObj.feature.attributes.FMLOAD +
                                     "</div><br>" +
                                     "<div><b>SPARROW Estimated Load " +
                                     chartUnits +
                                     ": </b>" +
-                                    responseObj.feature.attributes.SPARROW_ES +
+                                    responseObj.feature.attributes.SPLOAD +
                                     "</div><br>"
                             );
 
