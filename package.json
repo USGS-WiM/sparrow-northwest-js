@@ -23,7 +23,8 @@
     "gulp-useref": "^0.4.3",
     "gulp-util": "^2.2.14",
     "open": "0.0.5",
-    "wiredep": "^1.4.4"
+    "wiredep": "^1.4.4",
+    "bootstrap-select":"1.12.2"
   },
   "dependencies": {
     "tablesorter": "^2.28.5"
