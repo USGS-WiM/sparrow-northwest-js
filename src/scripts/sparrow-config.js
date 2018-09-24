@@ -9,7 +9,7 @@ Also removes PNAME and replaces it with COMID and ST_COMID
 var appTitle = "Pacific Northwest Nutrient Loading";
 var appVersion = "v0.9.0";
 /* replace URL with most recent project services URL*/ 
-var serviceBaseURL = "https://sparrowtest.wim.usgs.gov/arcgis/rest/services/SparrowNorthwest/SparrowNorthwest/MapServer/"; //important! UPDATE rest service URL
+var serviceBaseURL = "https://sparrowprod.wim.usgs.gov/arcgis/rest/services/Sparrow_Northwest/SPARROW_NW_WIM2/MapServer/"; //important! UPDATE rest service URL
 var chartUnits = " (kg/yr.)";
 var chartFeatureMax = 2500;  //chart will not be available if more than this many polygons are showing on map.
 
