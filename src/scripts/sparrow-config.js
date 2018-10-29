@@ -35,10 +35,10 @@ var groupResultsLabels = {
 }
 
 //download locations TODO change the links for each shapefile
-var phosphorusShapefileURL = 'https://sparrow.wim.usgs.gov/pacific-northwest/downloads/pacific_northwest_shapefiles_phosphorus.zip';
-var nitrogenShapefileURL = 'http://sparrow.wim.usgs.gov/pacific-northwest/downloads/pacific_northwest_shapefiles_nitrogen.zip';
-var phosCalibrationURL = 'http://sparrow.wim.usgs.gov/pacific-northwest/downloads/pacific_northwest_phosphorus_calibration_sites.zip';
-var nitroCalibrationURL = 'http://sparrow.wim.usgs.gov/pacific-northwest/downloads/pacific_northwest_nitrogen_calibration_sites.zip';
+var phosphorusShapefileURL = 'https://test.wim.usgs.gov/sparrow-pacific-northwest-test/downloads/pacific_northwest_shapefiles_phosphorus.zip';
+var nitrogenShapefileURL = 'http://test.wim.usgs.gov/sparrow-pacific-northwest-test/downloads/pacific_northwest_shapefiles_nitrogen.zip';
+var phosCalibrationURL = 'http://test.wim.usgs.gov/sparrow-pacific-northwest-test/downloads/pacific_northwest_phosphorus_calibration_sites.zip';
+var nitroCalibrationURL = 'http://test.wim.usgs.gov/sparrow-pacific-northwest-test/downloads/pacific_northwest_nitrogen_calibration_sites.zip';
  
 var tableOutFields = [
     { field: "FID", name: "Unique Feature Id"},
