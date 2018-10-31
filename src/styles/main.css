@@ -175,6 +175,10 @@ body {
     padding: 0 6px;
 }
 
+.lyrTogDiv #SparrowRanking{
+    cursor: not-allowed !important;
+}
+
 .latLngScale {
     position:absolute;
     padding:4px;
