@@ -2568,7 +2568,7 @@ require([
                 var button = $(
                     '<div class="btn-group-vertical lyrTogDiv" style="cursor: pointer;" > <button id="' +
                         layer.id +
-                        '"type="button" class="btn btn-default active" aria-pressed="true" style="font-weight: bold;text-align: left"><i class="glyphspan fa fa-check-square-o"></i>&nbsp;&nbsp;' +
+                        '"type="button" class="btn btn-default active" aria-pressed="true" style="font-weight: bold;text-align: left"><i class="glyphspan fa fa-check-square"></i>&nbsp;&nbsp;' +
                         layerName +
                         '<span id="opacity' +
                         camelize(layerName) +
@@ -2634,6 +2634,7 @@ require([
                         //TODO: note that layers that are turned on won't show up in the legend on instantiation
                     }
                 }
+                
             });
             
 
