@@ -35,10 +35,10 @@ var groupResultsLabels = {
 }
 
 //download locations TODO change the links for each shapefile
-var phosphorusShapefileURL = 'https://test.wim.usgs.gov/sparrow-pacific-northwest-test/downloads/pacific_northwest_shapefiles_phosphorus.zip';
-var nitrogenShapefileURL = 'http://test.wim.usgs.gov/sparrow-pacific-northwest-test/downloads/pacific_northwest_shapefiles_nitrogen.zip';
-var phosCalibrationURL = 'http://test.wim.usgs.gov/sparrow-pacific-northwest-test/downloads/pacific_northwest_phosphorus_calibration_sites.zip';
-var nitroCalibrationURL = 'http://test.wim.usgs.gov/sparrow-pacific-northwest-test/downloads/pacific_northwest_nitrogen_calibration_sites.zip';
+var phosphorusShapefileURL = 'https://sparrow.wim.usgs.gov/sparrow-pacific-northwest-2002/downloads/pacific_northwest_shapefiles_phosphorus.zip';
+var nitrogenShapefileURL = 'http://sparrow.wim.usgs.gov/sparrow-pacific-northwest-2002/downloads/pacific_northwest_shapefiles_nitrogen.zip';
+var phosCalibrationURL = 'http://sparrow.wim.usgs.gov/sparrow-pacific-northwest-2002/downloads/pacific_northwest_phosphorus_calibration_sites.zip';
+var nitroCalibrationURL = 'http://sparrow.wim.usgs.gov/sparrow-pacific-northwest-2002/downloads/pacific_northwest_nitrogen_calibration_sites.zip';
  
 var tableOutFields = [
     { field: "FID", name: "Unique Feature Id"},
@@ -57,7 +57,7 @@ var stateTableOutFields = [
     { field: "GP2", name: "HUC8 (in which HUC10 is nested)"},
     { field: "GRP_3_NAM", name: "HUC10"},
     { field: "ST_GP1_NAM", name: "State and Independent Watershed"},
-    { field: "ST_GP2_NAM", name: "State amd HUC8"},
+    { field: "ST_GP2_NAM", name: "State and HUC8"},
     { field: "ST_gp3_n_1", name: "Join Field"}
 
 ]
